@@ -9813,6 +9813,24 @@ interface(`files_watch_lib_dirs',`
 
 ########################################
 ## <summary>
+##	Watch generic files in /lib.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`files_watch_lib_files',`
+	gen_require(`
+		type lib_t;
+	')
+
+	allow $1 lib_t:file watch_dir_perms;
+')
+
+########################################
+## <summary>
 ##	manage generic symbolic links
 ##	in the /var/run directory.
 ## </summary>
