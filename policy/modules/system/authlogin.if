@@ -2207,6 +2207,10 @@ interface(`auth_filetrans_named_content',`
 	files_pid_filetrans($1, pam_var_run_t, dir, "sudo")
 	logging_log_named_filetrans($1, wtmp_t, file, "wtmp")
 	files_var_filetrans($1, auth_cache_t, dir, "coolkey")
+	files_lib_filetrans($1, passwd_file_t, file, "passwd")
+	files_lib_filetrans($1, passwd_file_t, file, "passwd-")
+	files_lib_filetrans($1, passwd_file_t, file, "group")
+	files_lib_filetrans($1, passwd_file_t, file, "group-")
 ')
 
 ########################################
@@ -2354,6 +2358,10 @@ interface(`auth_manage_passwd',`
 	files_etc_filetrans($1, passwd_file_t, file, ".pwd.lock")
 	files_etc_filetrans($1, passwd_file_t, file, "passwd.lock")
 	files_etc_filetrans($1, passwd_file_t, file, "group.lock")
+	files_lib_filetrans($1, passwd_file_t, file, "passwd")
+	files_lib_filetrans($1, passwd_file_t, file, "passwd-")
+	files_lib_filetrans($1, passwd_file_t, file, "group")
+	files_lib_filetrans($1, passwd_file_t, file, "group-")
 ')
 
 ########################################

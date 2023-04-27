@@ -617,3 +617,37 @@ interface(`libs_filetrans_named_content',`
 	files_etc_filetrans($1, ld_so_cache_t, file, "ld.so.preload")
 	files_etc_filetrans($1, ld_so_cache_t, file, "ld.so.preload~")
 ')
+
+########################################
+## <summary>
+##	Create objects in /usr/lib with a private
+##	type using a type_transition.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+## <param name="file_type">
+##	<summary>
+##	Private file type.
+##	</summary>
+## </param>
+## <param name="class">
+##	<summary>
+##	Object classes to be created.
+##	</summary>
+## </param>
+## <param name="name" optional="true">
+##	<summary>
+##	The name of the object being created.
+##	</summary>
+## </param>
+#
+interface(`files_lib_filetrans',`
+	gen_require(`
+		type lib_t;
+	')
+
+	filetrans_pattern($1, lib_t, $2, $3, $4)
+')

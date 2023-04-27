@@ -23,6 +23,8 @@ HOME_DIR/\.google_authenticator~		gen_context(system_u:object_r:auth_home_t,s0)
 /etc/passwd\.OLD	--	gen_context(system_u:object_r:passwd_file_t,s0)
 /etc/ptmptmp		--	gen_context(system_u:object_r:passwd_file_t,s0)
 /etc/group[-\+]?	--	gen_context(system_u:object_r:passwd_file_t,s0)
+/usr/lib/passwd[-\+]?	--	gen_context(system_u:object_r:passwd_file_t,s0)
+/usr/lib/group[-\+]?	--	gen_context(system_u:object_r:passwd_file_t,s0)
 
 /sbin/pam_console_apply	 --	gen_context(system_u:object_r:pam_console_exec_t,s0)
 /sbin/pam_timestamp_check --	gen_context(system_u:object_r:pam_timestamp_exec_t,s0)
